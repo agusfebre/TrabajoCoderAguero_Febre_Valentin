@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'appgreenmarket',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'GreenMarket.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['C:/Users/HP\Coder - Python/ProyectoFinal/GreenMarket/appgreenmarket/template/appgreenmarket/inicio.html'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

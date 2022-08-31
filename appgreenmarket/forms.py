@@ -5,6 +5,7 @@ class ProductoForm(forms.Form):
     nombre=forms.CharField(max_length=50)
     marca=forms.CharField(max_length=50)
     tipo=forms.CharField(max_length=50)
+    cantidad=forms.IntegerField()
     precio=forms.IntegerField()
 
 class ProveedorForm(forms.Form):

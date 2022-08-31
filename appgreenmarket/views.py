@@ -17,8 +17,9 @@ def cargaProducto(request):
             nombre= info["nombre"]
             marca= info["marca"]
             tipo= info["tipo"]
+            cantidad= info["cantidad"]
             precio= info["precio"]
-            product= Producto(codigo=codigo, nombre=nombre, marca=marca, tipo=tipo, precio=precio)
+            product= Producto(codigo=codigo, nombre=nombre, marca=marca, tipo=tipo, cantidad=cantidad, precio=precio)
             product.save()
             return render (request, "inicio.html", {"mensaje": "Producto Cargado Exitosamente!"})
         else:

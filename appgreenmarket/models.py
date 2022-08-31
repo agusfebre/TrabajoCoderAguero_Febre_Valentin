@@ -6,6 +6,7 @@ class Producto(models.Model):
     nombre=models.CharField(max_length=50)
     marca=models.CharField(max_length=50)
     tipo=models.CharField(max_length=50)
+    cantidad=models.IntegerField()
     precio=models.FloatField()
 
 class Proveedor(models.Model):

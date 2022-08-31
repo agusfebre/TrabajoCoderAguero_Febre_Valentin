@@ -1,0 +1,18 @@
+{% extends "inicio.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="col-md-4 offset-md-4 text-center">
+<h3 class="fw-bolder">Alta de Proveedores:</h3>
+<form action="{% url 'cargaProveedor' %}" class="card card-body p-5 text-center" method="POST"> {% csrf_token %}
+
+<table>
+    {{ formulario.as_table }}
+</table>
+
+<input class="btn btn-dark" type="submit", value="Guardar">
+
+</form>
+</div>
+{% endblock %}

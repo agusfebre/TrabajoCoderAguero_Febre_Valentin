@@ -1,6 +1,6 @@
 from django.urls import path
-from appgreenmarket import views
+from .views import *
 
-urlpattern = [
-    path ('iniciogreenmarket/', views.inicio),
+urlpatterns = [
+    path ('', inicio, name="inicio"),
 ]

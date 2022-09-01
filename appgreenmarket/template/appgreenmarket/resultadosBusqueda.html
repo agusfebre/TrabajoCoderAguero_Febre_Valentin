@@ -1,0 +1,23 @@
+{% extends "inicio.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<h1>Resultados:</h1>
+{% if mensaje %}
+    <h2>{{ mensaje }}</h2>
+{% else %}
+
+    {% for productos in producto }
+        <h2>{{ Producto.codigo }}</h2>
+        <h2>{{ Producto.nombre }}</h2>
+        <h2>{{ Producto.marca }}</h2>
+        <h2>{{ Producto.tipo}}</h2>
+        <h2>{{ Producto.cantidad }}</h2>
+        <h2>{{ Producto.precio }}</h2>
+    {% endfor %}
+
+{% endif %}
+
+{% endblock %}

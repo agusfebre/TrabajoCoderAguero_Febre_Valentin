@@ -1,0 +1,17 @@
+{% extends "inicio.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<form action="{% url 'buscar' %}" method="GET"> {% csrf_token %}
+
+    <input type="number" name="codigo" id="codigo">
+
+    <input type="submit" value="buscar">
+
+
+</form>
+
+
+{% endblock %}

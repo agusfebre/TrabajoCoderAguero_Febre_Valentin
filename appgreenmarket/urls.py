@@ -9,4 +9,8 @@ urlpatterns = [
     path('cargaCliente/', cargaCliente, name='cargaCliente'),
     # Listados
     path('listaProductos/', listaProductos, name='listaProductos'),
+
+    #buscar
+    path('busquedaProductos/', busquedaProducto, name="busquedaProducto"),
+    path('buscar/', buscar, name="buscar"),
 ]

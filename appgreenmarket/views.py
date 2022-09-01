@@ -66,3 +66,10 @@ def cargaCliente(request):
     else:
         form= ClienteForm()
     return render(request, "cargaCliente.html", {"formulario":form})
+
+
+    ## Lista de Productos
+def listaProductos(request):
+    productos=Producto.objects.all()
+    print(productos)
+    return render(request, "listadoProductos.html", {"productos":productos})

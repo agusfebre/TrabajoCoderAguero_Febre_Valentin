@@ -10,7 +10,7 @@ def inicio(request):
 
 def cargaProducto(request):
     if request.method=="POST":
-        form= CargaForm(request.POST)
+        form= ProductoForm(request.POST)
         if form.is_valid():
             info= form.cleaned_data
             codigo= info["codigo"]
@@ -21,9 +21,9 @@ def cargaProducto(request):
             precio= info["precio"]
             product= Producto(codigo=codigo, nombre=nombre, marca=marca, tipo=tipo, cantidad=cantidad, precio=precio)
             product.save()
-            return render (request, "inicio.html", {"mensaje": "Producto Cargado Exitosamente!"})
+            return render (request, "cargaProducto.html", {"mensaje": "Producto Cargado Exitosamente!"})
         else:
-            return render (request, "inicio.html", {"mensaje": "Error en carga de producto"})
+            return render (request, "cargaProducto.html", {"mensaje": "Error en carga de producto"})
     else:
         form= ProductoForm()
     return render(request, "cargaProducto.html", {"formulario":form})
@@ -40,9 +40,9 @@ def cargaProveedor(request):
             email= info["email"]
             proveedor= Proveedor(nombre=nombre, direccion=direccion, telefono=telefono, email=email)
             proveedor.save()
-            return render (request, "inicio.html", {"mensaje": "Se cargó el Proveedor!"})
+            return render (request, "cargaProveedor.html", {"mensaje": "Se cargó el Proveedor!"})
         else:
-            return render (request, "inicio.html", {"mensaje": "Error en la carga de Proveedor"})
+            return render (request, "cargaProveedor.html", {"mensaje": "Error en la carga de Proveedor"})
     else:
         form= ProveedorForm()
     return render(request, "cargaProveedor.html", {"formulario":form})
@@ -58,11 +58,11 @@ def cargaCliente(request):
             direccion= info["direccion"]
             telefono= info["telefono"]
             email= info["email"]
-            cliente= cliente(nombre=nombre, apellido=apellido, fechaNacimiento=fechaNacimiento, direccion=direccion, telefono=telefono, email=email)
+            cliente= Cliente(nombre=nombre, apellido=apellido, fechaNacimiento=fechaNacimiento, direccion=direccion, telefono=telefono, email=email)
             cliente.save()
-            return render (request, "inicio.html", {"mensaje": "El cliente se agregó a la base de datos!"})
+            return render (request, "cargaCliente.html", {"mensaje": "El cliente se agregó a la base de datos!"})
         else:
-            return render (request, "inicio.html", {"mensaje": "Error en la carga del cliente"})
+            return render (request, "cargaCliente.html", {"mensaje": "Error en la carga del cliente"})
     else:
         form= ClienteForm()
     return render(request, "cargaCliente.html", {"formulario":form})

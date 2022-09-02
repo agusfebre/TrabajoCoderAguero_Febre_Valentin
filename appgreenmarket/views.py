@@ -80,12 +80,21 @@ def busquedaProducto(request):
     return render(request, "busquedaProducto.html")
 
 def buscar(request):
-    if request.GET["producto"]:
-        comi=request.GET["nombre"]
-        productos=Producto.objects.filter(nombre=comi)
+    producto=request.GET["codigo"]
+    productos=Producto.objects.filter(codigo=producto)
+    return render(request, "resultadosBusqueda.html", {"productos":productos})
+    
+    
+    
+    
+    
+    
+    """if request.GET["codigo"]:
+        codigoProducto=request.GET["codigo"]
+        productos=Producto.objects.filter(codigo=codigoProducto)
         if len(productos)!=0:
-            return render(request, "appgreenmarket/resultadosBusqueda.html", {"producto":productos})
+            return render(request, "appgreenmarket/resultadosBusqueda.html", {"codigo":productos})
         else:
             return render(request, "appgreenmarket/resultadosBusqueda.html", {"mensaje": "No hay productos"})
     else:
-        return render(request, "appgreenmarket/busquedaProducto.html", {"mensaje": "No enviaste datos!"})
+        return render(request, "appgreenmarket/busquedaProducto.html", {"mensaje": "No enviaste datos!"})"""

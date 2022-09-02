@@ -11,6 +11,7 @@ urlpatterns = [
     path('listaProductos/', listaProductos, name='listaProductos'),
 
     #buscar
-    path('busquedaProductos/', busquedaProducto, name="busquedaProducto"),
-    path('buscar/', buscar, name="buscar"),
+    path('busquedaProducto/', busquedaProducto, name="busquedaProducto"),
+    path('buscar/', buscar, name='buscar'),
+
 ]

@@ -4,11 +4,12 @@
 
 {% block content %}
 
+<H1>Buscamos un producto</H1>
 <form action="{% url 'buscar' %}" method="GET"> {% csrf_token %}
 
-    <input type="number" name="codigo" id="codigo">
+    <p>Codigo del producto:<input type="number" name="codigo" id="codigo"></p>
 
-    <input type="submit" value="buscar">
+    <input type="submit" value="Buscar">
 
 
 </form>

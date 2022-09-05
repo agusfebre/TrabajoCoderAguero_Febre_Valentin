@@ -4,15 +4,17 @@
 
 {% block content %}
 
-<H1>Buscamos un producto</H1>
-<form action="{% url 'buscar' %}" method="GET"> {% csrf_token %}
+<div class="col-md-4 offset-md-4 card card-body p-3 text-center">
+    <h3 class="fw-bolder">Buscar Producto</h3>
+    <form action="{% url 'buscar' %}" method="GET"> {% csrf_token %}
 
-    <p>Codigo del producto:<input type="number" name="codigo" id="codigo"></p>
+        <p>Codigo del producto: <input type="number" name="codigo" id="codigo"></p>
 
-    <input type="submit" value="Buscar">
+    <input class="btn btn-dark" type="submit" value="Buscar">
 
 
 </form>
+</div>
 
 
 {% endblock %}

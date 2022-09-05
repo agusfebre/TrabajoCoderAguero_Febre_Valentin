@@ -1,0 +1,28 @@
+{% extends "inicio.html" %}
+
+{% load static %}
+
+{% block content %}
+
+{% if mensaje %}
+<h2>{{ mensaje }}</h2>
+
+{% else %}
+
+<h1>Resultados:</h1>
+
+
+{% for cliente in clientes %}
+<ul class="list-group">
+    <li class="list-group-item"><p>Codigo: {{ cliente.nombre }}</p></li>
+    <li class="list-group-item"><p>Nombre: {{ cliente.apellido }}</p></li>
+    <li class="list-group-item"><p>Marca: {{ cliente.fechaNacimiento }}</p></li>
+    <li class="list-group-item"><p>Tipo: {{ cliente.direccion }}</p></li>
+    <li class="list-group-item"><p>Cantidad: {{ cliente.telefono }}</p></li>
+    <li class="list-group-item"><p>Precio: {{ cliente.email }}</p></li>
+  </ul>
+{% endfor %}
+
+
+{% endif %}
+{% endblock %} 

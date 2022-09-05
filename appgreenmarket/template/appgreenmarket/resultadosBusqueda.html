@@ -13,13 +13,14 @@
 
 
 {% for producto in productos %}
-    <h2>Codigo: {{ producto.codigo }}</h2>
-    <h2>Nombre: {{ producto.nombre }}</h2>
-    <h2>Marca: {{ producto.marca }}</h2>
-    <h2>Tipo: {{ producto.tipo }}</h2>
-    <h2>Cantidad: {{ producto.cantidad }}</h2>
-    <h2>Precio: {{ producto.precio }}</h2>
-
+<ul class="list-group">
+    <li class="list-group-item"><p>Codigo: {{ producto.codigo }}</p></li>
+    <li class="list-group-item"><p>Nombre: {{ producto.nombre }}</p></li>
+    <li class="list-group-item"><p>Marca: {{ producto.marca }}</p></li>
+    <li class="list-group-item"><p>Tipo: {{ producto.tipo }}</p></li>
+    <li class="list-group-item"><p>Cantidad: {{ producto.cantidad }}</p></li>
+    <li class="list-group-item"><p>Precio: {{ producto.precio }}</p></li>
+  </ul>
 {% endfor %}
 
 

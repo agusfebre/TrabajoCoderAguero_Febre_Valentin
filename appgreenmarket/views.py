@@ -75,7 +75,7 @@ def listaProductos(request):
     return render(request, "listadoProductos.html", {"productos":productos})
 
 
-#buscar
+#buscar producto
 def busquedaProducto(request):
     return render(request, "busquedaProducto.html")
 
@@ -89,3 +89,21 @@ def buscar(request):
             return render(request, "resultadosBusqueda.html", {"mensaje": "No hay productos"})
     else:
         return render(request, "busquedaProducto.html", {"mensaje": "No enviaste datos!"})
+
+
+#buscar cliente
+
+def busquedaCliente(request):
+    return render(request, "busquedaCliente.html")
+
+def buscarCliente(request):
+    if request.GET["nombre"]:
+        cliente=request.GET["nombre"]
+        clientes=Cliente.objects.filter(nombre=cliente)
+        if len(clientes)!=0:
+            return render(request, "resultadosBusqueda.html", {"clientes":clientes})
+        else:
+            return render(request, "resultadosBusqueda.html", {"mensaje": "No hay clientes"})
+    else:
+        return render(request, "busquedaProducto.html", {"mensaje": "No enviaste datos!"})
+
